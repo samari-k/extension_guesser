@@ -22,7 +22,7 @@ A bash script to identify files with a tampered extension by making an educated 
 
 This command will check all files with the .jpg extension in the current directory. For each file that has a suspicious extension, the script will suggest a new extension and rename the file.
 
-![screenshot](/home/safi/Documents/Uni/1733/extensionguesser/eg_screenshot.png)
+![screenshot](eg_screenshot.png)
 
 ## Condensed oneliner
 
