@@ -28,4 +28,6 @@ This command will check all files with the .jpg extension in the current directo
 
 Not in need for fancy coloured output and automated renaming? Try this oneliner instead:
 
-`for file in *; do exts=`grep "$(file -b --mime-type $file)\s" /etc/mime.types | sed 's/\s/ /g' | tr -s ' ' | cut -d ' ' -f 1 --complement`; ext=`echo "$file" | cut -d "." -f 2`; if [[ ! "$exts[@]" =~ "$ext" ]]; then echo "$file should be `echo $exts | awk '{printf $1}'`";fi;done`
+```bash
+for file in *; do exts=`grep "$(file -b --mime-type $file)\s" /etc/mime.types | sed 's/\s/ /g' | tr -s ' ' | cut -d ' ' -f 1 --complement`; ext=`echo "$file" | cut -d "." -f 2`; if [[ ! "$exts[@]" =~ "$ext" ]]; then echo "$file should be `echo $exts | awk '{printf $1}'`";fi;done
+```
