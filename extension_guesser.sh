@@ -116,7 +116,10 @@ for file in ${files[@]}; do
       echo -e "${RED}[!] $file should be renamed to `best_sugg $ext_should`${ENDCOLOR}"
       if $verbose; then
         echo -e "    based on MIME type: $mime_type"
-        echo -e "    less likely: `alt_sugg $ext_should`"
+        less_likely=`alt_sugg $ext_should`
+        if [[ $less_likely != $ext_should ]]; then
+          echo -e "    less likely: $less_likely"
+        fi
       fi
     else
       echo -e "${MAGENTA}[?] $file: No extension found. Check manually."
